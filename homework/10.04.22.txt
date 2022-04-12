@@ -1,0 +1,2 @@
+Реализовать поиск постов по содержимому в PostController
+через форму Search(fragments.html)
