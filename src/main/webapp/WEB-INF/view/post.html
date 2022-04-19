@@ -47,7 +47,7 @@
             <form method="POST" th:action="@{/comment/create}" sec:authorize="hasRole('USER')">
                 <div class="card my-4">
 <!--                    Скрытое поле с id поста, которому адресован комментарий-->
-                    <input type="hidden" th:field="{post.postId}"/>
+                    <input type="hidden" th:field="*{post.postId}"/>
                     <h5 class="card-header">Leave a Comment:</h5>
                     <div class="card-body">
                         <form>
