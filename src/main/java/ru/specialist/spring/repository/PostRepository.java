@@ -1,5 +1,6 @@
 package ru.specialist.spring.repository;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import ru.specialist.spring.entity.Post;
 
@@ -14,5 +15,5 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     List<Post> findByUser_Username(String username);
 
-    List<Post> findByContentContainingIgnoreCase(String substring);
+    List<Post> findByContentContainingIgnoreCase(String substring, Sort sort);
 }

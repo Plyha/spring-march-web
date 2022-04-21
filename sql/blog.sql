@@ -63,13 +63,13 @@ insert into role(name) values ('ADMIN');
 insert into role(name) values ('USER');
 
 insert into "user" (username, password, dt_created, is_active)
-    values ('admin', 'admin', now()::timestamp, true);
+    values ('admin', '$2a$10$Ve/x27CaYSdAl/ptI/i.BOTyQClgfF/pyJhYbPyqWQXc.RgkpSQW6', now()::timestamp, true);
 
 insert into "user" (username, password, dt_created, is_active)
-    values ('user2', 'user2', now()::timestamp, true);
+    values ('user2', '$2a$10$tgBKTMnYYKFocEvywi2eD.pdo/qNlc/wk1CsWDz.7n6cElnJp/lCq', now()::timestamp, true);
 
 insert into "user" (username, password, dt_created, is_active)
-    values ('user3', 'user3', now()::timestamp, true);
+    values ('user3', '$2a$10$BF4rGj4hYSVBUcppqZjcFOyGip9tTEhTzUPRc1umGyhwQpmzcU29C', now()::timestamp, true);
 
 insert into user_role(user_id, role_id) values (1, 1);
 insert into user_role(user_id, role_id) values (2, 2);
@@ -112,3 +112,4 @@ insert into comment (post_id, user_id, content, dt_created)
     values (3, 2, 'Disgusting!', current_timestamp);
 insert into comment (post_id, user_id, content, dt_created)
     values (3, 2, 'Atrocious!', current_timestamp);
+

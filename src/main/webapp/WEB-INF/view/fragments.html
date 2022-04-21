@@ -34,17 +34,17 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-<!--            <ul class="navbar-nav ml-auto">-->
-<!--                <li sec:authorize="hasRole('USER')" class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/post/new}">New Post</a>-->
-<!--                </li>-->
-<!--                <li sec:authorize="!isAuthenticated()" class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/sign-in}">Sign in</a>-->
-<!--                </li>-->
-<!--                <li sec:authorize="isAuthenticated()" class="nav-item">-->
-<!--                    <a class="nav-link" th:href="@{/sign-out}">Sign out</a>-->
-<!--                </li>-->
-<!--            </ul>-->
+            <ul class="navbar-nav ml-auto">
+                <li sec:authorize="hasRole('USER')" class="nav-item">
+                    <a class="nav-link" th:href="@{/post/new}">New Post</a>
+                </li>
+                <li sec:authorize="!isAuthenticated()" class="nav-item">
+                    <a class="nav-link" th:href="@{/sign-in}">Sign in</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link" th:href="@{/sign-out}">Sign out</a>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -68,35 +68,38 @@
         <!-- Users Widget -->
         <div class="card my-4">
             <h5 class="card-header">Authors</h5>
-<!--            <div class="card-body">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-lg-6">-->
-<!--                        <ul class="list-unstyled mb-0">-->
-<!--                            <li th:each="user: ${users}">-->
-<!--                                <a th:if="${userStat.index % 2 == 0}"-->
-<!--                                   th:href="@{/user/{username}(username=${user.username})}"-->
-<!--                                   th:text="${user.username}"></a>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                    <div class="col-lg-6">-->
-<!--                        <ul class="list-unstyled mb-0">-->
-<!--                            <li th:each="user: ${users}">-->
-<!--                                <a th:if="${userStat.index % 2 != 0}"-->
-<!--                                   th:href="@{/user/{username}(username=${user.username})}"-->
-<!--                                   th:text="${user.username}"></a>-->
-<!--                            </li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled mb-0">
+                            <li th:each="user: ${users}">
+                                <a th:if="${userStat.index % 2 == 0}"
+                                   th:href="@{/user/{username}(username=${user.username})}"
+                                   th:text="${user.username}"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled mb-0">
+                            <li th:each="user: ${users}">
+                                <a th:if="${userStat.index % 2 != 0}"
+                                   th:href="@{/user/{username}(username=${user.username})}"
+                                   th:text="${user.username}"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Tag Widget -->
         <div class="card my-4">
             <h5 class="card-header">Tags</h5>
-            <div class="card-body">
-            </div>
+                <div class="card-body">
+                    <span th:each="tag: ${tags}">
+                        <a th:text="'#' + ${tag.name}" th:href="@{/tag/{tagName}(tagName=${tag.name})}"></a>
+                    </span>
+                </div>
         </div>
     </div>
 

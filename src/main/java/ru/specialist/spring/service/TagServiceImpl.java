@@ -34,4 +34,13 @@ public class TagServiceImpl implements TagService {
         Arrays.stream(names).forEach(this::createTag);
     }
 
+    @Override
+    public Tag findByName(String tagName) {
+        Tag tag = tagRepository.findByName(tagName).orElseThrow();
+
+        tag.getPosts().size();
+        return tag;
+    }
+
+
 }
